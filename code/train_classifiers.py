@@ -63,7 +63,7 @@ if __name__ == '__main__':
     loss = torch.nn.L1Loss()
     model_name = 'classifier_pretrained'
     loss_train=[]
-    n_epochs=200
+    n_epochs=100
     optimizer = torch.optim.Adam(model.fc.parameters())
     for epoch in range(n_epochs):
         print('epoch', epoch)
@@ -102,7 +102,7 @@ if __name__ == '__main__':
     not_pretrained = EEGFeatureExtractor()
     model = EEGClassifier(not_pretrained)
     loss = torch.nn.BCEWithLogitsLoss()
-    n_epochs=200
+    n_epochs=100
     optimizer = torch.optim.Adam(model.parameters())
     model_name = 'classifier_not_pretrained'
     loss_train=[]
