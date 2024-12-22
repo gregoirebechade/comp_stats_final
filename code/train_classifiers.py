@@ -19,6 +19,7 @@ class EEGClassifier(nn.Module):
 
     def forward(self, x):
         features = self.feature_extractor(x)
+        features = F.normalize(features, p=2, dim=1)
         return self.fc(features)
 
 class Mydataset(torch.utils.data.Dataset):
