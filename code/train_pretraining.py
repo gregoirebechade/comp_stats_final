@@ -90,7 +90,6 @@ chemin_vers_sauvegarde = './models/'
 if __name__ == '__main__':
     print('beginning training')
     dataloader_pretraining = DataLoader(Dataset_pretraining('./../data/kaggle_2/'), batch_size=1, shuffle=True)
-
     print('the length of the dataset is : ', dataloader_pretraining.__len__() )
     train_extractor = True
     model_name='extractor'
@@ -99,7 +98,8 @@ if __name__ == '__main__':
     device = 'cpu'
     model = EEGFeatureExtractor()
     n_epochs=20
-    loss = torch.nn.L1Loss()
+    # loss = torch.nn.L1Loss()
+    loss = nn.BCELoss()
     param_1 = torch.nn.Parameter(torch.ones(100, requires_grad=True))
     param_2 =  torch.nn.Parameter(torch.ones(1, requires_grad=True))
     # optimizer = torch.optim.Adam(model.parameters())
@@ -129,6 +129,7 @@ if __name__ == '__main__':
                 first_prediction = model(first_window.float().unsqueeze(0))
                 second_prediction = model(second_window.float().unsqueeze(0))
                 label_predicted = torch.dot(param_1, abs(first_prediction - second_prediction).squeeze()) + param_2
+                print(label_predicted.shape)
                 idx_1 = batch_y[0][0]
                 idx_2 = batch_y[0][1]
                 if (abs(idx_1- idx_2 ) < 1000 ) : 
