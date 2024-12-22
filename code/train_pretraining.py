@@ -72,27 +72,16 @@ class EEGFeatureExtractor(nn.Module):
         self.relu = nn.ReLU()
 
     def forward(self, x):
-        # print('au début', x.shape)
         x = self.relu(self.conv1(x))
-        # print(1, x.shape)
         x = self.pool(x)
-        # print(2, x.shape)
         x = self.relu(self.conv2(x))
-        # print(3, x.shape)
         x = self.pool(x)
-        # print(4, x.shape)
         x = torch.transpose(x, 1, 2)
-        # print(5, x.shape)
         x = self.relu(self.conv4(x))
-        # print(6, x.shape)
         x = torch.transpose(x, 1, 2)
-        # print(7, x.shape)
         x = self.conv5(x)
-        # print(8, x.shape)
         x = x.flatten(start_dim=1)
-        # print(9, x.shape)
         x = self.dropout(x)
-        # print('a la fin', x.shape)
         x = self.fc(x)
         return self.relu(x)
 
@@ -121,6 +110,8 @@ if __name__ == '__main__':
     model.to(device)
     loss_train=[]
     if train_extractor:
+        count1=0
+        countmins1=0
         for epoch in (range(n_epochs)):
             print('epoch', epoch)
             losstrain=0
@@ -140,15 +131,13 @@ if __name__ == '__main__':
                 label_predicted = torch.dot(param_1, abs(first_prediction - second_prediction).squeeze()) + param_2
                 idx_1 = batch_y[0][0]
                 idx_2 = batch_y[0][1]
-                if (
-                    
-                    abs(idx_1- idx_2 ) < 1000 # close in time
-                ) : 
-                    y_pred = torch.tensor([-1]).to(device)
+                if (abs(idx_1- idx_2 ) < 1000 ) : 
+                    y_pred = torch.tensor([1]).to(device)
+                    count1+=1
                 else:
-                    y_pred = torch.tensor([1]).to(device) # 1 s'ils sont proches, -1 sinon
+                    y_pred = torch.tensor([-1]).to(device) # 1 s'ils sont proches, -1 sinon
+                    countmins1+=1
                 l= -torch.nn.functional.logsigmoid(y_pred * label_predicted)
-                # l=torch.log(1+torch.exp(-y_pred*label_predicted))
                 counttrain+=1
                 l.backward()
                 losstrain+=l
@@ -157,7 +146,7 @@ if __name__ == '__main__':
                 print(f'epoch {epoch}, training loss = {losstrain/counttrain}')
             loss_train.append(losstrain/counttrain)
             
-        torch.save(model, chemin_vers_sauvegarde+'_final'+'.pth')
+        torch.save(model, chemin_vers_sauvegarde+model_name+'_final'+'.pth')
 
 
         # saving the losses in txt files : 
