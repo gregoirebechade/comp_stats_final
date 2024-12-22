@@ -70,6 +70,10 @@ if __name__ == '__main__':
         losstrain=0
         counttrain=0
         for batch_x,batch_y in dataloader_train:
+            # normalize the data
+            mean, std = batch_x.mean(), batch_x.std()
+            batch_x = (batch_x - mean) / std
+
             batch_x=batch_x.to(device)
             batch_y = batch_y.float()
             batch_y=batch_y.to(device)
@@ -110,6 +114,10 @@ if __name__ == '__main__':
         losstrain=0
         counttrain=0
         for batch_x,batch_y in dataloader_train:
+            # normalize the data
+            mean, std = batch_x.mean(), batch_x.std()
+            batch_x = (batch_x - mean) / std
+            
             batch_x=batch_x.to(device)
             batch_y = batch_y.float()
             batch_y=batch_y.to(device)
