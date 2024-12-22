@@ -141,6 +141,7 @@ if __name__ == '__main__':
                 if np.random.random() < 0.0001 : 
                     print('a patch of features', first_prediction)
                 # l= -torch.nn.functional.logsigmoid(y_pred * label_predicted)
+                print(label_predicted, y_pred)
                 l = loss(label_predicted, y_pred.float())
                 counttrain+=1
                 l.backward()
