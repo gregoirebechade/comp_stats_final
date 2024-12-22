@@ -124,7 +124,7 @@ if __name__ == '__main__':
         if epoch%10==0:
             print(f'epoch {epoch}, training loss = {losstrain/counttrain}')
         loss_train.append(losstrain/counttrain)
-    torch.save(model, chemin_vers_sauvegarde+'_final'+'.pth')
+    torch.save(model, chemin_vers_sauvegarde+model_name+'_final'+'.pth')
     loss_list_train = [loss_train[i].detach().cpu().numpy() for i in range(len(loss_train))]
     with open('./losses/loss_train_'+model_name+'.txt', 'w') as f :
         for elt in loss_list_train : 
