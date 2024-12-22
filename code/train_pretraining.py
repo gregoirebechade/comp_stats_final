@@ -98,7 +98,7 @@ if __name__ == '__main__':
     model_name='extractor'
     if not os.path.exists('./models/'+model_name):
         os.makedirs('./models/'+model_name)
-    device = 'cuda:0' if torch.cuda.is_available() else 'cpu'
+    device = 'cpu'
     model = EEGFeatureExtractor()
     n_epochs=200
     loss = torch.nn.L1Loss()
