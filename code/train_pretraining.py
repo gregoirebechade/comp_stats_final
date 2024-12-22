@@ -136,7 +136,7 @@ if __name__ == '__main__':
                     y_pred = torch.tensor([1]).to(device)
                     count1+=1
                 else:
-                    y_pred = torch.tensor([-1]).to(device) # 1 s'ils sont proches, -1 sinon
+                    y_pred = torch.tensor([0]).to(device) # 1 s'ils sont proches, -1 sinon
                     countmins1+=1
                 if np.random.random() < 0.0001 : 
                     print('a patch of features', first_prediction)
