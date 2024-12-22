@@ -92,13 +92,12 @@ class EEGFeatureExtractor(nn.Module):
 chemin_vers_sauvegarde = './../models/'
 if __name__ == '__main__':
     dataloader_pretraining = DataLoader(Dataset_pretraining('./../data/kaggle_2/'), batch_size=1, shuffle=True)
-
     train_extractor = True
     tau = 516 # 1 seconde
     model_name='extractor'
     if not os.path.exists('./models/'+model_name):
         os.makedirs('./models/'+model_name)
-    device = 'cuda:0' if torch.cuda.is_available() else 'cpu'
+    device = 'cpu'
     model = EEGFeatureExtractor()
     n_epochs=200
     loss = torch.nn.L1Loss()
@@ -113,7 +112,7 @@ if __name__ == '__main__':
     loss_train=[]
     if train_extractor:
         for epoch in (range(n_epochs)):
-            print(epoch)
+            print('epoch', epoch)
             losstrain=0
             counttrain=0
             lossval=0
@@ -138,7 +137,8 @@ if __name__ == '__main__':
                     y_pred = torch.tensor([-1]).to(device)
                 else:
                     y_pred = torch.tensor([1]).to(device) # 1 s'ils sont proches, -1 sinon
-                l=torch.log(1+torch.exp(-y_pred*label_predicted))
+                l= F.logsigmoid(y_pred * label_predicted)
+                # l=torch.log(1+torch.exp(-y_pred*label_predicted))
                 counttrain+=1
                 l.backward()
                 losstrain+=l
