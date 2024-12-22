@@ -129,7 +129,7 @@ if __name__ == '__main__':
                 first_prediction = model(first_window.float().unsqueeze(0))
                 second_prediction = model(second_window.float().unsqueeze(0))
                 label_predicted = torch.dot(param_1, abs(first_prediction - second_prediction).squeeze()) + param_2
-                print(label_predicted.shape)
+                label_predicted = torch.sigmoid(label_predicted)
                 idx_1 = batch_y[0][0]
                 idx_2 = batch_y[0][1]
                 if (abs(idx_1- idx_2 ) < 1000 ) : 
@@ -139,8 +139,9 @@ if __name__ == '__main__':
                     y_pred = torch.tensor([-1]).to(device) # 1 s'ils sont proches, -1 sinon
                     countmins1+=1
                 if np.random.random() < 0.0001 : 
-                    print('label_predicted', first_prediction)
-                l= -torch.nn.functional.logsigmoid(y_pred * label_predicted)
+                    print('a patch of features', first_prediction)
+                # l= -torch.nn.functional.logsigmoid(y_pred * label_predicted)
+                l = loss(label_predicted, y_pred.float())
                 counttrain+=1
                 l.backward()
                 losstrain+=l
