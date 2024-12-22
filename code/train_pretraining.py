@@ -138,7 +138,7 @@ if __name__ == '__main__':
                 else:
                     y_pred = torch.tensor([0]).to(device) # 1 s'ils sont proches, -1 sinon
                     countmins1+=1
-                if np.random.random() < 0.01 : 
+                if np.random.random() < 0.001 : 
                     print('a patch of features', first_prediction)
                 # l= -torch.nn.functional.logsigmoid(y_pred * label_predicted)
                 l = loss(label_predicted, y_pred.float())
