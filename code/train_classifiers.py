@@ -79,7 +79,7 @@ if __name__ == '__main__':
             batch_y=batch_y.to(device)
             optimizer.zero_grad()
             y_pred = model(batch_x.float())
-            print(y_pred)
+            # print(y_pred)
             l=loss(y_pred.squeeze(), batch_y)
             counttrain+=1
             l.backward()
@@ -117,7 +117,7 @@ if __name__ == '__main__':
             # normalize the data
             mean, std = batch_x.mean(), batch_x.std()
             batch_x = (batch_x - mean) / std
-            
+
             batch_x=batch_x.to(device)
             batch_y = batch_y.float()
             batch_y=batch_y.to(device)
