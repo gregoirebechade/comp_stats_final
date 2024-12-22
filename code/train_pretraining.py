@@ -97,7 +97,7 @@ class EEGFeatureExtractor(nn.Module):
         return self.relu(x)
 
 
-chemin_vers_sauvegarde = './../models/'
+chemin_vers_sauvegarde = './models/'
 if __name__ == '__main__':
     print('beginning training')
     dataloader_pretraining = DataLoader(Dataset_pretraining('./../data/kaggle_2/'), batch_size=1, shuffle=True)
@@ -109,7 +109,7 @@ if __name__ == '__main__':
         os.makedirs('./models/'+model_name)
     device = 'cpu'
     model = EEGFeatureExtractor()
-    n_epochs=200
+    n_epochs=20
     loss = torch.nn.L1Loss()
     param_1 = torch.nn.Parameter(torch.ones(100, requires_grad=True))
     param_2 =  torch.nn.Parameter(torch.ones(1, requires_grad=True))
