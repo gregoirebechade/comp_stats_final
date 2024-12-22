@@ -128,6 +128,10 @@ if __name__ == '__main__':
                 # print('the shape is', first_window.float().shape)
                 first_prediction = model(first_window.float().unsqueeze(0))
                 second_prediction = model(second_window.float().unsqueeze(0))
+                # normalization : 
+                first_prediction = first_prediction / torch.norm(first_prediction)
+                second_prediction = second_prediction / torch.norm(second_prediction)
+                
                 label_predicted = torch.dot(param_1, abs(first_prediction - second_prediction).squeeze()) + param_2
                 label_predicted = torch.sigmoid(label_predicted)
                 idx_1 = batch_y[0][0]
