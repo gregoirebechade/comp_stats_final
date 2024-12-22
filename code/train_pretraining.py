@@ -13,8 +13,6 @@ import torch.nn as nn
 
 
 
-
-
 class Dataset_pretraining(torch.utils.data.Dataset):
     def __init__(self, path_to_data, n_files=36, n_samples_per_file=31*4, segment_length=1000, slide = 250):
         self.path_to_data = path_to_data
@@ -24,29 +22,39 @@ class Dataset_pretraining(torch.utils.data.Dataset):
         self.segment_length = segment_length
         self.data = []
         for file in range(self.n_files):
-            # Précharger tous les fichiers en mémoire pour accélérer l'accès
             x = pd.read_csv(self.path_to_data + 's' + str(file).zfill(2) + '.csv', header=None).transpose().to_numpy()
             self.data.append(x)
 
     def __len__(self):
-        return self.n_files * self.n_samples_per_file**2
+        return self.n_files * self.n_samples_per_file*2
 
     def __getitem__(self, idx):
-        file = idx // self.n_samples_per_file**2
-        sample = (idx % self.n_samples_per_file)
+        file = idx // ((31*4)*2)
+        sample = (idx % ((31*4)*2))
         first = (sample % (31*4))*250
-        second = (sample // (31%4))*250
-        if first + self.segment_length > len(self.data[file][0]):
-            first = len(self.data[file][0]) - self.segment_length
-        if second + self.segment_length > len(self.data[file][0]):
-            second = len(self.data[file][0]) - self.segment_length
-       
+        if first+1000 >= 31000:
+            first = 30000-1
+        if sample // (31*4) == 0:  # proches, second est une fenêtre proche de first
+            if first + 1500 > 31000:
+                second  = first  - 500
+            else : 
+                second = first + 500
+        else: # éloignés, second est une fenêtre éloignée de first
+            assert sample // (31*4) == 1
+            second = first + 15500
+            if second + 1000 > 31000:
+                second = 15500
         x1 = self.data[file][:, first: first+self.segment_length]  # Utilisation de la donnée préchargée
         x2 = self.data[file][:, second: second+self.segment_length]
         # print(x1.shape)
         # print(x2.shape)
         # print(first, second)
-        return torch.stack([torch.tensor(x1), torch.tensor(x2)]), torch.tensor([first, second])
+        try : 
+            return torch.stack([torch.tensor(x1), torch.tensor(x2)]), torch.tensor([first, second])
+        except :
+            print(file, sample, first, second, idx)
+            raise ValueError
+
 
 
 class EEGFeatureExtractor(nn.Module):
@@ -91,9 +99,11 @@ class EEGFeatureExtractor(nn.Module):
 
 chemin_vers_sauvegarde = './../models/'
 if __name__ == '__main__':
+    print('beginning training')
     dataloader_pretraining = DataLoader(Dataset_pretraining('./../data/kaggle_2/'), batch_size=1, shuffle=True)
+
+    print('the length of the dataset is : ', dataloader_pretraining.__len__() )
     train_extractor = True
-    tau = 516 # 1 seconde
     model_name='extractor'
     if not os.path.exists('./models/'+model_name):
         os.makedirs('./models/'+model_name)
@@ -137,13 +147,13 @@ if __name__ == '__main__':
                     y_pred = torch.tensor([-1]).to(device)
                 else:
                     y_pred = torch.tensor([1]).to(device) # 1 s'ils sont proches, -1 sinon
-                l= F.logsigmoid(y_pred * label_predicted)
+                l= -torch.nn.functional.logsigmoid(y_pred * label_predicted)
                 # l=torch.log(1+torch.exp(-y_pred*label_predicted))
                 counttrain+=1
                 l.backward()
                 losstrain+=l
                 optimizer.step()
-            if epoch%10==0:
+            if True:
                 print(f'epoch {epoch}, training loss = {losstrain/counttrain}')
             loss_train.append(losstrain/counttrain)
             
