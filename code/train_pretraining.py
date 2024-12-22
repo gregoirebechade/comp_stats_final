@@ -105,10 +105,14 @@ if __name__ == '__main__':
         n_epochs=30
         # loss = torch.nn.L1Loss()
         loss = nn.BCELoss()
-        # param_1 = torch.nn.Parameter(0.01 * torch.ones(100, requires_grad=True))
-        # param_2 =  torch.nn.Parameter(torch.ones(1, requires_grad=True))
+        param_1 = torch.nn.Parameter(0.01 * torch.ones(100, requires_grad=True))
+        param_2 =  torch.nn.Parameter(torch.ones(1, requires_grad=True))
         # optimizer = torch.optim.Adam(model.parameters())
-        optimizer = torch.optim.Adam( model.parameters())
+        optimizer = torch.optim.Adam(
+        [{'params': model.parameters()}, {'params': [param_1, param_2]}],
+        lr=0.1
+    )
+        # optimizer = torch.optim.Adam( model.parameters())
         model.to(device)
         loss_train=[]
         if train_extractor:
@@ -132,7 +136,7 @@ if __name__ == '__main__':
                     first_prediction = first_prediction / torch.norm(first_prediction)
                     second_prediction = second_prediction / torch.norm(second_prediction)
 
-                    # label_predicted = torch.dot(param_1, abs(first_prediction - second_prediction).squeeze()) + param_2
+                    label_predicted = torch.dot(param_1, abs(first_prediction - second_prediction).squeeze()) + param_2
                     label_predicted = torch.sigmoid(label_predicted)
                     idx_1 = batch_y[0][0]
                     idx_2 = batch_y[0][1]
