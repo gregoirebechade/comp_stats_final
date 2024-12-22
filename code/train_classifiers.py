@@ -97,39 +97,39 @@ if __name__ == '__main__':
 
 
 
-    # print('finsih model 1')
-    # print('begin model 2')
-    # not_pretrained = EEGFeatureExtractor()
-    # model = EEGClassifier(not_pretrained)
-    # loss = torch.nn.BCEWithLogitsLoss()
-    # n_epochs=200
-    # optimizer = torch.optim.Adam(model.parameters())
-    # model_name = 'classifier_not_pretrained'
-    # loss_train=[]
-    # loss = torch.nn.BCEWithLogitsLoss()
-    # n_epochs=200
-    # optimizer = torch.optim.Adam(model.fc.parameters())
-    # for epoch in range(n_epochs):
-    #     print('epoch', epoch)
-    #     losstrain=0
-    #     counttrain=0
-    #     for batch_x,batch_y in dataloader_train:
-    #         batch_x=batch_x.to(device)
-    #         batch_y = batch_y.float()
-    #         batch_y=batch_y.to(device)
-    #         optimizer.zero_grad()
-    #         y_pred = model(batch_x.float())
-    #         l=loss(y_pred.squeeze(), batch_y)
-    #         counttrain+=1
-    #         l.backward()
-    #         losstrain+=l
-    #         optimizer.step()
-    #     if epoch%10==0:
-    #         print(f'epoch {epoch}, training loss = {losstrain/counttrain}')
-    #     loss_train.append(losstrain/counttrain)
-    # torch.save(model, chemin_vers_sauvegarde+model_name+'_final'+'.pth')
-    # loss_list_train = [loss_train[i].detach().cpu().numpy() for i in range(len(loss_train))]
-    # with open('./losses/loss_train_'+model_name+'.txt', 'w') as f :
-    #     for elt in loss_list_train : 
-    #         f.write(str(elt) + '\n')
+    print('finsih model 1')
+    print('begin model 2')
+    not_pretrained = EEGFeatureExtractor()
+    model = EEGClassifier(not_pretrained)
+    loss = torch.nn.BCEWithLogitsLoss()
+    n_epochs=200
+    optimizer = torch.optim.Adam(model.parameters())
+    model_name = 'classifier_not_pretrained'
+    loss_train=[]
+    loss = torch.nn.BCEWithLogitsLoss()
+    n_epochs=200
+    optimizer = torch.optim.Adam(model.fc.parameters())
+    for epoch in range(n_epochs):
+        print('epoch', epoch)
+        losstrain=0
+        counttrain=0
+        for batch_x,batch_y in dataloader_train:
+            batch_x=batch_x.to(device)
+            batch_y = batch_y.float()
+            batch_y=batch_y.to(device)
+            optimizer.zero_grad()
+            y_pred = model(batch_x.float())
+            l=loss(y_pred.squeeze(), batch_y)
+            counttrain+=1
+            l.backward()
+            losstrain+=l
+            optimizer.step()
+        if epoch%10==0:
+            print(f'epoch {epoch}, training loss = {losstrain/counttrain}')
+        loss_train.append(losstrain/counttrain)
+    torch.save(model, chemin_vers_sauvegarde+model_name+'_final'+'.pth')
+    loss_list_train = [loss_train[i].detach().cpu().numpy() for i in range(len(loss_train))]
+    with open('./losses/loss_train_'+model_name+'bis'+'.txt', 'w') as f :
+        for elt in loss_list_train : 
+            f.write(str(elt) + '\n')
 
