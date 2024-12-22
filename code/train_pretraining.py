@@ -97,7 +97,7 @@ if __name__ == '__main__':
         os.makedirs('./models/'+model_name)
     device = 'cpu'
     model = EEGFeatureExtractor()
-    n_epochs=20
+    n_epochs=100
     # loss = torch.nn.L1Loss()
     loss = nn.BCELoss()
     param_1 = torch.nn.Parameter(0.01 * torch.ones(100, requires_grad=True))
