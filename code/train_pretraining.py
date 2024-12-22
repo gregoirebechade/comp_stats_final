@@ -137,6 +137,8 @@ if __name__ == '__main__':
                 else:
                     y_pred = torch.tensor([-1]).to(device) # 1 s'ils sont proches, -1 sinon
                     countmins1+=1
+                if np.random.random() < 0.0001 : 
+                    print('label_predicted', label_predicted)
                 l= -torch.nn.functional.logsigmoid(y_pred * label_predicted)
                 counttrain+=1
                 l.backward()
