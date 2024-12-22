@@ -59,8 +59,8 @@ if __name__ == '__main__':
         param.requires_grad = False
     model = EEGClassifier(pretrained)
     # loss for classification : 
-    # loss = torch.nn.BCEWithLogitsLoss()
-    loss = torch.nn.L1Loss()
+    loss = torch.nn.BCEWithLogitsLoss()
+    # loss = torch.nn.L1Loss()
     model_name = 'classifier_pretrained'
     loss_train=[]
     n_epochs=100
@@ -75,6 +75,7 @@ if __name__ == '__main__':
             batch_y=batch_y.to(device)
             optimizer.zero_grad()
             y_pred = model(batch_x.float())
+            print(y_pred)
             l=loss(y_pred.squeeze(), batch_y)
             counttrain+=1
             l.backward()
@@ -92,11 +93,6 @@ if __name__ == '__main__':
 
 
 
-
-
-
-
-
     print('finsih model 1')
     print('begin model 2')
     not_pretrained = EEGFeatureExtractor()
@@ -106,9 +102,8 @@ if __name__ == '__main__':
     optimizer = torch.optim.Adam(model.parameters())
     model_name = 'classifier_not_pretrained'
     loss_train=[]
-    # loss = torch.nn.BCEWithLogitsLoss()
-    loss = torch.nn.L1Loss()
-    n_epochs=200
+    loss = torch.nn.BCEWithLogitsLoss()
+    # loss = torch.nn.L1Loss()
     optimizer = torch.optim.Adam(model.fc.parameters())
     for epoch in range(n_epochs):
         print('epoch', epoch)
