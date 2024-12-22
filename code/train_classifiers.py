@@ -16,13 +16,12 @@ class EEGClassifier(nn.Module):
         super(EEGClassifier, self).__init__()
         self.feature_extractor = feature_extractor
         self.fc = nn.Linear(100, 1)
-        self.f = nn.Sigmoid()
 
     def forward(self, x):
         features = self.feature_extractor(x)
         features = F.normalize(features, p=2, dim=1)
         x = self.fc(features)
-        return self.f(x)
+        return x
 
 class Mydataset(torch.utils.data.Dataset):
     def __init__(self, path_to_data):
