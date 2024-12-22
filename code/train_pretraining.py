@@ -100,7 +100,7 @@ if __name__ == '__main__':
     n_epochs=20
     # loss = torch.nn.L1Loss()
     loss = nn.BCELoss()
-    param_1 = torch.nn.Parameter(torch.ones(100, requires_grad=True))
+    param_1 = torch.nn.Parameter(0.01 * torch.ones(100, requires_grad=True))
     param_2 =  torch.nn.Parameter(torch.ones(1, requires_grad=True))
     # optimizer = torch.optim.Adam(model.parameters())
     optimizer = torch.optim.Adam(
