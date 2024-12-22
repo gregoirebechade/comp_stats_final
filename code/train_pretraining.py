@@ -97,71 +97,69 @@ if __name__ == '__main__':
         os.makedirs('./models/'+model_name)
     device = 'cpu'
     model = EEGFeatureExtractor()
-    n_epochs=100
-    # loss = torch.nn.L1Loss()
-    loss = nn.BCELoss()
-    param_1 = torch.nn.Parameter(0.01 * torch.ones(100, requires_grad=True))
-    param_2 =  torch.nn.Parameter(torch.ones(1, requires_grad=True))
-    # optimizer = torch.optim.Adam(model.parameters())
-    optimizer = torch.optim.Adam(
-        [{'params': model.parameters()}, {'params': [param_1, param_2]}],
-        lr=0.1
-    )
-    model.to(device)
-    loss_train=[]
-    if train_extractor:
-        count1=0
-        countmins1=0
-        for epoch in (range(n_epochs)):
-            print('epoch', epoch)
-            losstrain=0
-            counttrain=0
-            lossval=0
-            countval=0
-            for batch_x,batch_y in dataloader_pretraining:
-                batch_x=batch_x[0].to(device)
-                batch_y = batch_y.long()
-                batch_y=batch_y.to(device)
-                optimizer.zero_grad()
-                first_window = batch_x[0]
-                second_window = batch_x[1]
-                # print('the shape is', first_window.float().shape)
-                first_prediction = model(first_window.float().unsqueeze(0))
-                second_prediction = model(second_window.float().unsqueeze(0))
-                # normalization : 
-                first_prediction = first_prediction / torch.norm(first_prediction)
-                second_prediction = second_prediction / torch.norm(second_prediction)
+    for round in range(3) : 
+        print('next round', round)
+        if round != 0 : 
+            model = torch.load(chemin_vers_sauvegarde+model_name+'_final'+str(round-1)+'.pth')
+            print('c est chargé ')
+        n_epochs=30
+        # loss = torch.nn.L1Loss()
+        loss = nn.BCELoss()
+        # param_1 = torch.nn.Parameter(0.01 * torch.ones(100, requires_grad=True))
+        # param_2 =  torch.nn.Parameter(torch.ones(1, requires_grad=True))
+        # optimizer = torch.optim.Adam(model.parameters())
+        optimizer = torch.optim.Adam( model.parameters())
+        model.to(device)
+        loss_train=[]
+        if train_extractor:
+            for epoch in (range(n_epochs)):
+                print('epoch', epoch)
+                losstrain=0
+                counttrain=0
+                lossval=0
+                countval=0
+                for batch_x,batch_y in dataloader_pretraining:
+                    batch_x=batch_x[0].to(device)
+                    batch_y = batch_y.long()
+                    batch_y=batch_y.to(device)
+                    optimizer.zero_grad()
+                    first_window = batch_x[0]
+                    second_window = batch_x[1]
+                    # print('the shape is', first_window.float().shape)
+                    first_prediction = model(first_window.float().unsqueeze(0))
+                    second_prediction = model(second_window.float().unsqueeze(0))
+                    # normalization : 
+                    first_prediction = first_prediction / torch.norm(first_prediction)
+                    second_prediction = second_prediction / torch.norm(second_prediction)
 
-                label_predicted = torch.dot(param_1, abs(first_prediction - second_prediction).squeeze()) + param_2
-                label_predicted = torch.sigmoid(label_predicted)
-                idx_1 = batch_y[0][0]
-                idx_2 = batch_y[0][1]
-                if (abs(idx_1- idx_2 ) < 1000 ) : 
-                    y_pred = torch.tensor([1]).to(device)
-                    count1+=1
-                else:
-                    y_pred = torch.tensor([0]).to(device) # 1 s'ils sont proches, -1 sinon
-                    countmins1+=1
-                # if np.random.random() < 0.0001 : 
-                #     print('a patch of features', first_prediction)
-                # l= -torch.nn.functional.logsigmoid(y_pred * label_predicted)
-                l = loss(label_predicted, y_pred.float())
-                counttrain+=1
-                l.backward()
-                losstrain+=l
-                optimizer.step()
-            if True:
-                print(f'epoch {epoch}, training loss = {losstrain/counttrain}')
-            loss_train.append(losstrain/counttrain)
-            
-        torch.save(model, chemin_vers_sauvegarde+model_name+'_final'+'.pth')
+                    # label_predicted = torch.dot(param_1, abs(first_prediction - second_prediction).squeeze()) + param_2
+                    label_predicted = torch.sigmoid(label_predicted)
+                    idx_1 = batch_y[0][0]
+                    idx_2 = batch_y[0][1]
+                    if (abs(idx_1- idx_2 ) < 1000 ) : 
+                        y_pred = torch.tensor([1]).to(device)
+                    else:
+                        y_pred = torch.tensor([0]).to(device) # 1 s'ils sont proches, -1 sinon
+                    # if np.random.random() < 0.0001 : 
+                    #     print('a patch of features', first_prediction)
+                    # l= -torch.nn.functional.logsigmoid(y_pred * label_predicted)
+                    l = loss(label_predicted, y_pred.float())
+                    counttrain+=1
+                    l.backward()
+                    losstrain+=l
+                    optimizer.step()
+                if True:
+                    print(f'epoch {epoch}, training loss = {losstrain/counttrain}')
+                loss_train.append(losstrain/counttrain)
+                
+            torch.save(model, chemin_vers_sauvegarde+model_name+'_final'+str(round)+'.pth')
 
 
-        # saving the losses in txt files : 
-        loss_list_train = [loss_train[i].detach().cpu().numpy() for i in range(len(loss_train))]
+            # saving the losses in txt files : 
+            loss_list_train = [loss_train[i].detach().cpu().numpy() for i in range(len(loss_train))]
 
 
 
-        with open('./losses/loss_train_'+model_name+'.txt', 'w') as f :
-            for elt in loss_list_train : 
-                f.write(str(elt) + '\n')
+            with open('./losses/loss_train_'+model_name+'round_'+str(round)+'.txt', 'w') as f :
+                for elt in loss_list_train : 
+                    f.write(str(elt) + '\n')
