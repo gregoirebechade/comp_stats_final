@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.12) (preloaded format=pdflatex 2024.1.7)  21 DEC 2024 11:56
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.12) (preloaded format=pdflatex 2024.1.7)  23 DEC 2024 08:49
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -840,36 +840,266 @@ Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
 \c@ALC@depth=\count377
 \ALC@tlm=\skip68
 \algorithmicindent=\skip69
+) (C:\Users\grego\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\biblatex.sty
+Package: biblatex 2023/03/05 v3.19 programmable bibliographies (PK/MW)
+ (C:\Users\grego\AppData\Local\Programs\MiKTeX\tex/latex/logreq\logreq.sty
+Package: logreq 2010/08/04 v1.0 xml request logger
+\lrq@indent=\count378
+ (C:\Users\grego\AppData\Local\Programs\MiKTeX\tex/latex/logreq\logreq.def
+File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
+))
+\c@tabx@nest=\count379
+\c@listtotal=\count380
+\c@listcount=\count381
+\c@liststart=\count382
+\c@liststop=\count383
+\c@citecount=\count384
+\c@citetotal=\count385
+\c@multicitecount=\count386
+\c@multicitetotal=\count387
+\c@instcount=\count388
+\c@maxnames=\count389
+\c@minnames=\count390
+\c@maxitems=\count391
+\c@minitems=\count392
+\c@citecounter=\count393
+\c@maxcitecounter=\count394
+\c@savedcitecounter=\count395
+\c@uniquelist=\count396
+\c@uniquename=\count397
+\c@refsection=\count398
+\c@refsegment=\count399
+\c@maxextratitle=\count400
+\c@maxextratitleyear=\count401
+\c@maxextraname=\count402
+\c@maxextradate=\count403
+\c@maxextraalpha=\count404
+\c@abbrvpenalty=\count405
+\c@highnamepenalty=\count406
+\c@lownamepenalty=\count407
+\c@maxparens=\count408
+\c@parenlevel=\count409
+\blx@tempcnta=\count410
+\blx@tempcntb=\count411
+\blx@tempcntc=\count412
+\c@blx@maxsection=\count413
+\blx@maxsegment@0=\count414
+\blx@notetype=\count415
+\blx@parenlevel@text=\count416
+\blx@parenlevel@foot=\count417
+\blx@sectionciteorder@0=\count418
+\blx@sectionciteorderinternal@0=\count419
+\blx@entrysetcounter=\count420
+\blx@biblioinstance=\count421
+\labelnumberwidth=\skip70
+\labelalphawidth=\skip71
+\biblabelsep=\skip72
+\bibitemsep=\skip73
+\bibnamesep=\skip74
+\bibinitsep=\skip75
+\bibparsep=\skip76
+\bibhang=\skip77
+\blx@bcfin=\read4
+\blx@bcfout=\write6
+\blx@langwohyphens=\language80
+\c@mincomprange=\count422
+\c@maxcomprange=\count423
+\c@mincompwidth=\count424
+Package biblatex Info: Trying to load biblatex default data model...
+Package biblatex Info: ... file 'blx-dm.def' found.
+ (C:\Users\grego\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\blx-dm.def
+File: blx-dm.def 2023/03/05 v3.19 biblatex localization (PK/MW)
 )
+Package biblatex Info: Trying to load biblatex style data model...
+Package biblatex Info: ... file 'numeric.dbx' not found.
+Package biblatex Info: Trying to load biblatex custom data model...
+Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
+\c@afterword=\count425
+\c@savedafterword=\count426
+\c@annotator=\count427
+\c@savedannotator=\count428
+\c@author=\count429
+\c@savedauthor=\count430
+\c@bookauthor=\count431
+\c@savedbookauthor=\count432
+\c@commentator=\count433
+\c@savedcommentator=\count434
+\c@editor=\count435
+\c@savededitor=\count436
+\c@editora=\count437
+\c@savededitora=\count438
+\c@editorb=\count439
+\c@savededitorb=\count440
+\c@editorc=\count441
+\c@savededitorc=\count442
+\c@foreword=\count443
+\c@savedforeword=\count444
+\c@holder=\count445
+\c@savedholder=\count446
+\c@introduction=\count447
+\c@savedintroduction=\count448
+\c@namea=\count449
+\c@savednamea=\count450
+\c@nameb=\count451
+\c@savednameb=\count452
+\c@namec=\count453
+\c@savednamec=\count454
+\c@translator=\count455
+\c@savedtranslator=\count456
+\c@shortauthor=\count457
+\c@savedshortauthor=\count458
+\c@shorteditor=\count459
+\c@savedshorteditor=\count460
+\c@labelname=\count461
+\c@savedlabelname=\count462
+\c@institution=\count463
+\c@savedinstitution=\count464
+\c@lista=\count465
+\c@savedlista=\count466
+\c@listb=\count467
+\c@savedlistb=\count468
+\c@listc=\count469
+\c@savedlistc=\count470
+\c@listd=\count471
+\c@savedlistd=\count472
+\c@liste=\count473
+\c@savedliste=\count474
+\c@listf=\count475
+\c@savedlistf=\count476
+\c@location=\count477
+\c@savedlocation=\count478
+\c@organization=\count479
+\c@savedorganization=\count480
+\c@origlocation=\count481
+\c@savedoriglocation=\count482
+\c@origpublisher=\count483
+\c@savedorigpublisher=\count484
+\c@publisher=\count485
+\c@savedpublisher=\count486
+\c@language=\count487
+\c@savedlanguage=\count488
+\c@origlanguage=\count489
+\c@savedoriglanguage=\count490
+\c@pageref=\count491
+\c@savedpageref=\count492
+\shorthandwidth=\skip78
+\shortjournalwidth=\skip79
+\shortserieswidth=\skip80
+\shorttitlewidth=\skip81
+\shortauthorwidth=\skip82
+\shorteditorwidth=\skip83
+\locallabelnumberwidth=\skip84
+\locallabelalphawidth=\skip85
+\localshorthandwidth=\skip86
+\localshortjournalwidth=\skip87
+\localshortserieswidth=\skip88
+\localshorttitlewidth=\skip89
+\localshortauthorwidth=\skip90
+\localshorteditorwidth=\skip91
+Package biblatex Info: Trying to load compatibility code...
+Package biblatex Info: ... file 'blx-compat.def' found.
+ (C:\Users\grego\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\blx-compat.def
+File: blx-compat.def 2023/03/05 v3.19 biblatex compatibility (PK/MW)
+)
+Package biblatex Info: Trying to load generic definitions...
+Package biblatex Info: ... file 'biblatex.def' found.
+ (C:\Users\grego\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\biblatex.def
+File: biblatex.def 2023/03/05 v3.19 biblatex compatibility (PK/MW)
+\c@textcitecount=\count493
+\c@textcitetotal=\count494
+\c@textcitemaxnames=\count495
+\c@biburlbigbreakpenalty=\count496
+\c@biburlbreakpenalty=\count497
+\c@biburlnumpenalty=\count498
+\c@biburlucpenalty=\count499
+\c@biburllcpenalty=\count500
+\biburlbigskip=\muskip18
+\biburlnumskip=\muskip19
+\biburlucskip=\muskip20
+\biburllcskip=\muskip21
+\c@smartand=\count501
+)
+Package biblatex Info: Trying to load bibliography style 'numeric'...
+Package biblatex Info: ... file 'numeric.bbx' found.
+ (C:\Users\grego\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/bbx\numeric.bbx
+File: numeric.bbx 2023/03/05 v3.19 biblatex bibliography style (PK/MW)
+Package biblatex Info: Trying to load bibliography style 'standard'...
+Package biblatex Info: ... file 'standard.bbx' found.
+ (C:\Users\grego\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/bbx\standard.bbx
+File: standard.bbx 2023/03/05 v3.19 biblatex bibliography style (PK/MW)
+\c@bbx:relatedcount=\count502
+\c@bbx:relatedtotal=\count503
+))
+Package biblatex Info: Trying to load citation style 'numeric'...
+Package biblatex Info: ... file 'numeric.cbx' found.
+ (C:\Users\grego\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/cbx\numeric.cbx
+File: numeric.cbx 2023/03/05 v3.19 biblatex citation style (PK/MW)
+Package biblatex Info: Redefining '\cite'.
+Package biblatex Info: Redefining '\parencite'.
+Package biblatex Info: Redefining '\footcite'.
+Package biblatex Info: Redefining '\footcitetext'.
+Package biblatex Info: Redefining '\smartcite'.
+Package biblatex Info: Redefining '\supercite'.
+Package biblatex Info: Redefining '\textcite'.
+Package biblatex Info: Redefining '\textcites'.
+Package biblatex Info: Redefining '\cites'.
+Package biblatex Info: Redefining '\parencites'.
+Package biblatex Info: Redefining '\smartcites'.
+)
+Package biblatex Info: Trying to load configuration file...
+Package biblatex Info: ... file 'biblatex.cfg' found.
+ (C:\Users\grego\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\biblatex.cfg
+File: biblatex.cfg 
+)
+Package biblatex Info: Input encoding 'utf8' detected.
+Package biblatex Info: Document encoding is UTF8 ....
+ (C:\Users\grego\AppData\Local\Programs\MiKTeX\tex/latex/l3kernel\expl3.sty
+Package: expl3 2023-12-11 L3 programming layer (loader) 
+ (C:\Users\grego\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
+File: l3backend-pdftex.def 2023-11-09 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count504
+\l__pdf_internal_box=\box87
+))
+Package biblatex Info: ... and expl3
+(biblatex)             2023-12-11 L3 programming layer (loader) 
+(biblatex)             is new enough (at least 2020/04/06),
+(biblatex)             setting 'casechanger=expl3'.
+ (C:\Users\grego\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\blx-case-expl3.sty (C:\Users\grego\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/xparse\xparse.sty
+Package: xparse 2023-10-10 L3 Experimental document command parser
+)
+Package: blx-case-expl3 2023/03/05 v3.19 expl3 case changing code for biblatex
+))
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\\' on input line 24.
+(hyperref)                removing `\\' on input line 28.
 
-(C:\Users\grego\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
-File: l3backend-pdftex.def 2023-11-09 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count378
-\l__pdf_internal_box=\box87
-) (main.aux)
+
+Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
+(biblatex)                Loading 'csquotes' recommended.
+
+\@quotelevel=\count505
+\@quotereset=\count506
+(main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -907,16 +1137,16 @@ LaTeX Font Info:    ... okay on input line 30.
 
 (C:\Users\grego\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count379
+\scratchcounter=\count507
 \scratchdimen=\dimen354
 \scratchbox=\box88
-\nofMPsegments=\count380
-\nofMParguments=\count381
+\nofMPsegments=\count508
+\nofMParguments=\count509
 \everyMPshowfont=\toks65
-\MPscratchCnt=\count382
+\MPscratchCnt=\count510
 \MPscratchDim=\dimen355
-\MPnumerator=\count383
-\makeMPintoPDFobject=\count384
+\MPnumerator=\count511
+\makeMPintoPDFobject=\count512
 \everyMPtoPDFconversion=\toks66
 ) (C:\Users\grego\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -924,57 +1154,57 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
  (C:\Users\grego\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-Package hyperref Info: Link coloring OFF on input line 30.
+Package hyperref Info: Link coloring OFF on input line 34.
  (main.out) (main.out)
-\@outlinefile=\write6
-\openout6 = `main.out'.
+\@outlinefile=\write7
+\openout7 = `main.out'.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/lmr/m/n --> OT1/cmss/m/n on input line 30.
+(Font)                  OT1/lmr/m/n --> OT1/cmss/m/n on input line 34.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/lmr/bx/n --> OT1/cmss/b/n on input line 30.
+(Font)                  OT1/lmr/bx/n --> OT1/cmss/b/n on input line 34.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/lmss/m/n on input line 30.
+(Font)                  OT1/cmss/m/n --> OT1/lmss/m/n on input line 34.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmss/b/n --> OT1/lmss/b/n on input line 30.
+(Font)                  OT1/cmss/b/n --> OT1/lmss/b/n on input line 34.
 \symnumbers=\mathgroup7
 \sympureletters=\mathgroup8
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/lmss/m/n --> T1/lmr/m/n on input line 30.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 30.
+(Font)                  OT1/lmss/m/n --> T1/lmr/m/n on input line 34.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 34.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/lmr/bx/n --> T1/lmss/b/n on input line 30.
+(Font)                  OT1/lmr/bx/n --> T1/lmss/b/n on input line 34.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/lmr/bx/n --> T1/lmss/b/n on input line 30.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 30.
+(Font)                  OT1/lmr/bx/n --> T1/lmss/b/n on input line 34.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 34.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/lmss/m/n --> T1/lmss/m/n on input line 30.
+(Font)                  OT1/lmss/m/n --> T1/lmss/m/n on input line 34.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/lmss/bx/n --> T1/lmss/m/n on input line 30.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 30.
+(Font)                  OT1/lmss/bx/n --> T1/lmss/m/n on input line 34.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 34.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/lmr/m/it --> T1/lmss/m/it on input line 30.
+(Font)                  OT1/lmr/m/it --> T1/lmss/m/it on input line 34.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/lmr/bx/it --> T1/lmss/m/it on input line 30.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 30.
+(Font)                  OT1/lmr/bx/it --> T1/lmss/m/it on input line 34.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 34.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/lmtt/m/n --> T1/lmtt/m/n on input line 30.
+(Font)                  OT1/lmtt/m/n --> T1/lmtt/m/n on input line 34.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/lmtt/m/n --> T1/lmtt/m/n on input line 30.
+(Font)                  OT1/lmtt/m/n --> T1/lmtt/m/n on input line 34.
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
-(Font)                  T1/lmss/m/n --> T1/lmss/b/n on input line 30.
+(Font)                  T1/lmss/m/n --> T1/lmss/b/n on input line 34.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  T1/lmss/m/it --> T1/lmss/b/it on input line 30.
+(Font)                  T1/lmss/m/it --> T1/lmss/b/it on input line 34.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/lmss/b/n --> T1/lmr/b/n on input line 30.
+(Font)                  OT1/lmss/b/n --> T1/lmr/b/n on input line 34.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  T1/lmss/b/n --> T1/lmss/b/n on input line 30.
+(Font)                  T1/lmss/b/n --> T1/lmss/b/n on input line 34.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  T1/lmss/m/n --> T1/lmss/b/n on input line 30.
+(Font)                  T1/lmss/m/n --> T1/lmss/b/n on input line 34.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  T1/lmss/m/it --> T1/lmss/b/it on input line 30.
+(Font)                  T1/lmss/m/it --> T1/lmss/b/it on input line 34.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  T1/lmtt/m/n --> T1/lmtt/b/n on input line 30.
+(Font)                  T1/lmtt/m/n --> T1/lmtt/b/n on input line 34.
  (C:\Users\grego\AppData\Local\Programs\MiKTeX\tex/latex/translator\translator-basic-dictionary-English.dict
 Dictionary: translator-basic-dictionary, Language: English 
 ) (C:\Users\grego\AppData\Local\Programs\MiKTeX\tex/latex/translator\translator-basic-dictionary-French.dict
@@ -1000,8 +1230,8 @@ Dictionary: translator-theorem-dictionary, Language: English
 ) (C:\Users\grego\AppData\Local\Programs\MiKTeX\tex/latex/translator\translator-theorem-dictionary-French.dict
 Dictionary: translator-theorem-dictionary, Language: French 
 )
-LaTeX Info: Redefining \degres on input line 30.
-LaTeX Info: Redefining \up on input line 30.
+LaTeX Info: Redefining \degres on input line 34.
+LaTeX Info: Redefining \up on input line 34.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: End \AtBeginDocument code.
@@ -1016,19 +1246,43 @@ Package: pdflscape-nometadata 2022-10-28 v0.13 Display of landscape pages in PDF
 Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
 )
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
-)) (main.nav) [1{C:/Users/grego/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/grego/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}
+))
+Package biblatex Info: Trying to load language 'french'...
+Package biblatex Info: ... file 'french.lbx' found.
+ (C:\Users\grego\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/lbx\french.lbx
+File: french.lbx 2023/03/05 v3.19 biblatex localization (PK/MW)
+)
+Package biblatex Info: Input encoding 'utf8' detected.
+Package biblatex Info: Automatic encoding selection.
+(biblatex)             Assuming data encoding 'utf8'.
+\openout6 = `main.bcf'.
 
-] [2
+Package biblatex Info: Trying to load bibliographic data...
+Package biblatex Info: ... file 'main.bbl' found.
+ (main.bbl)
+Package biblatex Info: Reference section=0 on input line 34.
+Package biblatex Info: Reference segment=0 on input line 34.
+ (main.nav) [1{C:/Users/grego/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/grego/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}
+
+] (sections/romane.tex [2
+
+]) (sections/gregoire.tex [3
+
+])
+
+LaTeX Warning: Empty bibliography on input line 49.
+
+[4
 
 ]
-\tf@nav=\write7
-\openout7 = `main.nav'.
+\tf@nav=\write8
+\openout8 = `main.nav'.
 
-\tf@toc=\write8
-\openout8 = `main.toc'.
+\tf@toc=\write9
+\openout9 = `main.toc'.
 
-\tf@snm=\write9
-\openout9 = `main.snm'.
+\tf@snm=\write10
+\openout10 = `main.snm'.
 
  (main.aux)
  ***********
@@ -1036,20 +1290,23 @@ LaTeX2e <2023-11-01>
 L3 programming layer <2023-12-11>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 47949AC7C3DCEDDDEEFE3CD50587DDA1;103.
+(rerunfilecheck)             Checksum: 13C2C7F6B18B4BB5E420532CB0CF417F;446.
+Package logreq Info: Writing requests to 'main.run.xml'.
+\openout1 = `main.run.xml'.
+
  ) 
 Here is how much of TeX's memory you used:
- 40410 strings out of 474495
- 951110 string characters out of 5743936
- 1938460 words of memory out of 5000000
- 61932 multiletter control sequences out of 15000+600000
+ 47297 strings out of 474495
+ 1091255 string characters out of 5743936
+ 1940460 words of memory out of 5000000
+ 68754 multiletter control sequences out of 15000+600000
  574083 words of font info for 45 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 128i,16n,123p,790b,687s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 128i,16n,123p,790b,1740s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/grego/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmss10.pfb><C:/Users/grego/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmss12.pfb><C:/Users/grego/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmss8.pfb>
-Output written on main.pdf (2 pages, 79408 bytes).
+Output written on main.pdf (4 pages, 93600 bytes).
 PDF statistics:
- 104 PDF objects out of 1000 (max. 8388607)
- 6 named destinations out of 1000 (max. 500000)
- 91 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 176 PDF objects out of 1000 (max. 8388607)
+ 12 named destinations out of 1000 (max. 500000)
+ 107 words of extra memory for PDF output out of 10000 (max. 10000000)
 

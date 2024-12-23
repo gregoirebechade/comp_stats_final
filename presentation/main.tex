@@ -19,6 +19,10 @@
 \usepackage{pdfpages}
 \usepackage{algorithm}
 \usepackage{algorithmic}
+
+\usepackage[backend=biber,style=numeric]{biblatex}
+\addbibresource{bibliography/references.bib}
+
 \title{Uncovering the structure of clinical EEG signals with self-supervised learning}
 \subtitle{ Hubert Banville, Omar Chehab, Aapo Hyvärinen, Densi-Alexander Engemann and Alexandre Gramfort}
 \author{ Romane Barra \\  Grégoire Béchade}
@@ -34,11 +38,15 @@
 \end{frame}
 \begin{section}{Introduction}
 
-\begin{frame}
-    
-\end{frame}
+\input{sections/romane.tex}
+\input{sections/gregoire.tex}
 
 \end{section}
+
+
+\begin{frame}
+\printbibliography
+\end{frame}
 
 
 \end{document}
