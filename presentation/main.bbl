@@ -16,5 +16,59 @@
   {}
 \endgroup
 
+
+\refsection{0}
+  \datalist[entry]{nty/global//global/global}
+    \entry{banville2021uncovering}{article}{}
+      \name{author}{5}{}{%
+        {{hash=af2fb2e40af03d3f1faeb62a35754fb7}{%
+           family={Banville},
+           familyi={B\bibinitperiod},
+           given={Hubert},
+           giveni={H\bibinitperiod}}}%
+        {{hash=cd958055cbeab63038bac89e00a8f50a}{%
+           family={Chehab},
+           familyi={C\bibinitperiod},
+           given={Omar},
+           giveni={O\bibinitperiod}}}%
+        {{hash=9f23be03b80f7c25a1c0b2fe2f1fb001}{%
+           family={Hyvärinen},
+           familyi={H\bibinitperiod},
+           given={Aapo},
+           giveni={A\bibinitperiod}}}%
+        {{hash=bd8750270ea3cf3aa43828729266a54f}{%
+           family={Engemann},
+           familyi={E\bibinitperiod},
+           given={Denis-Alexander},
+           giveni={D\bibinithyphendelim A\bibinitperiod}}}%
+        {{hash=12ebe424e1c87de156c57e8fa7683f46}{%
+           family={Gramfort},
+           familyi={G\bibinitperiod},
+           given={Alexandre},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {IOP Publishing}%
+      }
+      \strng{namehash}{052e3022aaac5a8250a782aefc50ff1d}
+      \strng{fullhash}{01c96a8f50443c615f6e2760a2719402}
+      \strng{bibnamehash}{052e3022aaac5a8250a782aefc50ff1d}
+      \strng{authorbibnamehash}{052e3022aaac5a8250a782aefc50ff1d}
+      \strng{authornamehash}{052e3022aaac5a8250a782aefc50ff1d}
+      \strng{authorfullhash}{01c96a8f50443c615f6e2760a2719402}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Neural Engineering}
+      \field{number}{4}
+      \field{title}{Uncovering the structure of clinical EEG signals with self-supervised learning}
+      \field{volume}{18}
+      \field{year}{2021}
+      \field{pages}{046020}
+      \range{pages}{1}
+    \endentry
+  \enddatalist
+\endrefsection
 \endinput
 
