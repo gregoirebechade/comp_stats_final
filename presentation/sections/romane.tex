@@ -1,7 +1,66 @@
-\section{Presentation of the paper}
+\section{Presentation of the Paper}
 
-
-\begin{frame}
-
-    blahblahblah
+\begin{frame}{Objectives}
+Analyze ElectroencEphaloGraphy (\textbf{EEG}) signals by using Self-Supervised Learning (\textbf{SSL}) methods.
+\begin{itemize}
+    \item Reduce expensive manual annotations.
+    \item Models trained to identify structure in the unlabeled data
+    \item Two application problems:
+    \begin{itemize}
+        \item \textbf{Sleep staging}: classify sleep stages using short EEG windows.
+        \item \textbf{Pathology detection}: identify pathological EEG patterns.
+    \end{itemize}
+    \end{itemize}
 \end{frame}
+
+\begin{frame}{Computational approach and models}
+Optimization based on stochastic gradient descent (SGD) with backpropagation.
+    \begin{enumerate}
+        \item \textbf{Preprocessing}: filtering, downsampling and segmenting the data into windows.
+        \item \textbf{Training}: CNNs on SSL \textbf{pretext tasks}.
+        \item \textbf{Evaluation}: learned embeddings tested on supervised tasks (logistic regression).
+    \end{enumerate}
+
+\begin{frame}{The Pretext Task : three SSL methods}
+SSL principle : learn "latent structure" in the data.
+
+Relative Positioning (\textbf{RP}): predicts whether two EEG windows are close in time or not.
+\begin{itemize}
+    \item Assumption : close windows in time are likely to share similarities.
+    \item + simple and computationally efficient.
+    \item - limited in simple tasks (e.g. sleep staging): cannot apply to models with abrupt changes in time.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{The Pretext Task : three SSL methods}
+Temporal Shuffling (\textbf{TS}): predicts if three EEG windows are in temporal order or shuffled.
+\begin{itemize}
+    \item Assumption : EEG signals follow a temporal progression.
+    \item + efficient for finding transitions between stages.
+    \item + more robust than \textbf{RP} : evaluation of a triplet (and not a pair).
+    \item - limited in simple tasks (e.g. sleep staging): cannot apply to models with abrupt changes in time.
+    \item - less computationally efficient than RP.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{The Pretext Task : three SSL methods}
+Contrastive Predictive Coding (\textbf{CPC}): predicts the next EEG window given a sequence of previous windows.
+\begin{itemize}
+    \item + learn long-term dependencies and more complex structures.
+    \item + uses an autoregressive model.
+    \item + genezalise on complex downstream tasks (e.g. pathology detection).
+    \item - requires larger datasets.
+    \item - less computationally efficient.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{The Pretext Task : three SSL methods}
+SSL methods are test-dependent.
+\begin{itemize}
+    \item \textbf{RP} and \textbf{TS} perform well with short-term temporal dependencies (e.g. sleep staging).
+    \item \textbf{CPC} excels in long-term temporal understanding (e.g. pathology detection).
+\end{itemize}
+
+SSL tasks outperform supervised methods when there are few labeled data.
+\end{frame}
+
