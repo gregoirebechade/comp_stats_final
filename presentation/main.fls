@@ -566,6 +566,9 @@ INPUT C:\Users\grego\AppData\Local\Programs\MiKTeX\fonts\enc\dvips\lm\lm-ec.enc
 INPUT .\sections\romane.tex
 INPUT .\sections\romane.tex
 INPUT sections\romane.tex
+INPUT C:\Users\grego\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmssbx10.tfm
+INPUT C:\Users\grego\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmss10.tfm
+INPUT C:\Users\grego\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmssbx10.tfm
 INPUT .\sections\gregoire.tex
 INPUT .\sections\gregoire.tex
 INPUT sections\gregoire.tex
@@ -576,7 +579,6 @@ INPUT .\figures\example_eeg.png
 INPUT .\figures\example_eeg.png
 INPUT .\figures\example_eeg.png
 INPUT .\figures\example_eeg.png
-INPUT C:\Users\grego\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmss10.tfm
 INPUT C:\Users\grego\AppData\Local\Programs\MiKTeX\tex\latex\lm\ot1lmss.fd
 INPUT C:\Users\grego\AppData\Local\Programs\MiKTeX\tex\latex\lm\ot1lmss.fd
 INPUT C:\Users\grego\AppData\Local\Programs\MiKTeX\tex\latex\lm\ot1lmss.fd
@@ -647,6 +649,8 @@ INPUT C:\Users\grego\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmss12.
 INPUT C:\Users\grego\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmss12.pfb
 INPUT C:\Users\grego\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmss8.pfb
 INPUT C:\Users\grego\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmss8.pfb
+INPUT C:\Users\grego\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmssbx10.pfb
+INPUT C:\Users\grego\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmssbx10.pfb
 INPUT C:\Users\grego\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmsso10.pfb
 INPUT C:\Users\grego\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmsso10.pfb
 INPUT C:\Users\grego\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\symbols\msbm10.pfb
