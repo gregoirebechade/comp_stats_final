@@ -1,42 +1,39 @@
 \section{Presentation of the Paper}
 
-\begin{frame}{Objectifs}
-Analyse de signaux electroencéphalogrammes (\textbf{EEG}) via l'apprentissage auto-supervisé (\textbf{SSL}).
+\begin{frame}{Objectives}
+Analysis of electroencephalogram (\textbf{EEG}) signals using self-supervised learning (\textbf{SSL}).
 \begin{itemize}
-    \item Réduire les annotations coûteuses.
-    \item Modèles entrainés pour identifier la structure des données
-    \item Deux problèmes d'applications:
+    \item Reduce costly annotations.
+    \item Train models to identify the structure of the data.
+    \item Two application problems:
     \begin{itemize}
-        \item \textbf{Sleep staging}: Classification des phases de sommeil.
-        \item \textbf{Pathology detection}: Détection de pathologies.
+        \item \textbf{Sleep staging}: Classification of sleep stages.
+        \item \textbf{Pathology detection}: Detection of pathologies.
     \end{itemize}
-    \end{itemize}
+\end{itemize}
 \end{frame}
 
-\begin{frame}{Approche}
-Tâche prétextuelle :
+\begin{frame}{Approach}
+Pretext task:
     \begin{enumerate}
-        \item \textbf{Positionnement relatif} (RP) : Prédire si deux fenêtres EEG sont proches dans le temps.
-        \item \textbf{Mélange temporel}: (TS) : Vérifier si des fenêtres sont dans l’ordre ou mélangées.
-        \item \textbf{Codage prédictif contrastif}: (CPC) : Prédire les fenêtres futures à partir du contexte.
+        \item \textbf{Relative positioning} (RP): Predict whether two EEG windows are close in time.
+        \item \textbf{Temporal shuffling} (TS): Verify if windows are in order or shuffled.
+        \item \textbf{Contrastive predictive coding} (CPC): Predict future windows from the context.
     \end{enumerate}
-Représentations avec des réseaux convolutionnels.
+Representations learned using convolutional networks.
 \end{frame}
 
-\begin{frame}{Résultats clés}
+\begin{frame}{Key Results}
 \begin{itemize}
-    \item SSL surpasse les modèles supervisés dans des contextes avec peu de données labelisées.
-    \item Les représentations apprises capturent des structures physiologiques pertinentes.
+    \item SSL outperforms supervised models in contexts with limited labeled data.
+    \item The learned representations capture relevant physiological structures.
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Critique des hypothèses}
+\begin{frame}{Critique of Hypotheses}
 \begin{itemize}
-    \item Structure temporelle des EEG: limites si changements abrupts.
-    \item Volume de données non annotées : normalisation robuste pour éviter le bruit.
-    \item Généralisation des représentations : âge pour les phases de sommeil.
-    \item Tâche prétextuelle : analyses fréquentielles pour compléter les résultats.
+    \item Temporal structure of EEG: limitations if abrupt changes occur.
+    \item Generalization of representations: age-related differences for sleep stages.
+    \item Pretext task: frequency analyses to complement results.
 \end{itemize}
 \end{frame}
-
-
